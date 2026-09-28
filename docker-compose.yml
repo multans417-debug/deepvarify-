@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  deepverify-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - DEVICE=auto
+      - IMAGE_MODEL_PATH=/app/models/image/best.pt
+      - VIDEO_MODEL_PATH=/app/models/video/best.pt
+      - FRONTEND_ORIGINS=http://localhost:3000
+    volumes:
+      - ./models:/app/models:ro
+      - deepverify-storage:/app/app/storage
+    restart: unless-stopped
+
+volumes:
+  deepverify-storage:
