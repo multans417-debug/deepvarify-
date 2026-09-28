@@ -1,31 +1,41 @@
-__pycache__/
-*.pyc
-.venv/
-venv/
-*.egg-info/
-.pytest_cache/
-.ruff_cache/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-.env
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-app/storage/temp/*
-app/storage/results/*
-app/storage/explanations/*
-!app/storage/temp/.gitkeep
-!app/storage/results/.gitkeep
-!app/storage/explanations/.gitkeep
+# testing
+/coverage
 
-models/image/*.pt
-models/video/*.pt
-!models/image/.gitkeep
-!models/video/.gitkeep
+# next.js
+/.next/
+/out/
 
-data/raw/*
-data/processed/*
-data/manifests/*.csv
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-!data/manifests/.gitkeep
+# production
+/build
 
-reports/
-*.log
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
